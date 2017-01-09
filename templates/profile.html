@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+
+{% block content %}
+
+<h1>Your Profile</h1>
+<br>
+
+{% if current_user.is_authenticated() %}
+  <p>Email: <strong>{{current_user.email}}</strong></p>
+{% endif %}
+
+<h2>Change Password</h2>
+<br>
+
+{% endblock %}
+</body>
+</html>

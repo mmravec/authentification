@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+</head>
+<body>
+<ul class="nav navbar-nav">
+  {% if current_user.confirmed and current_user.is_authenticated() %}
+    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+  {% elif current_user.is_authenticated() %}
+    <li><a href="{{ url_for('unconfirmed') }}">Confirm</a></li>
+  {% endif %}
+</ul>
+</body>
+</html>
